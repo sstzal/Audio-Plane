@@ -55,27 +55,33 @@ BODY {
   <a href="https://sstzal.github.io/">Shuai Shen<sup>1</sup></a>&nbsp;&nbsp;
   <a href="https://li-wanhua.github.io/">Wanhua Li<sup>2</sup></a>&nbsp;&nbsp;
   Yunpeng Zhang<sup>3</sup>&nbsp;&nbsp;
-  Weipeng Hu<sup>1</sup>&nbsp;&nbsp;
-  Yap-Peng Tan<sup>1</sup>
+  Yap-Peng Tan<sup>1</sup>&nbsp;&nbsp;
+  Jiwen Lu<sup>4</sup>
   </center>
   
-<center><h3><sup>1</sup>Nanyang Technological University&nbsp;&nbsp; <sup>2</sup>Harvard University&nbsp;&nbsp; <sup>3</sup>PhiGent Robotics </h3></center>
+<center><h3><sup>1</sup>Nanyang Technological University&nbsp;&nbsp; <sup>2</sup>Harvard University&nbsp;&nbsp; <sup>3</sup>PhiGent Robotics&nbsp;&nbsp; <sup>2</sup>Tsinghua University </h3></center>
 <center><h3><strong> 
-<a href="https://arxiv.org/pdf/2503.22605">[Paper]</a>
 <a href="https://youtu.be/AwBwFzOX63Q">[Video]</a>
 </strong> </h3></center>
 
+<h2>Overview</h2>
+<div style="font-size:16px"><p>We present a compact and interpretable Audio-Plane representation into the Gaussian Splatting framework for high-quality and efficient talking head synthesis. By driving head Gaussians with audio, our method can synthesize vivid and temporally synchronized talking videos in real time.</p></div>
+<center><a href="images/fig1_tip2_00">
+<img style="PADDING-LEFT: 0px; PADDING-RIGHT: 200px;" src="images/fig1_tip2_00.jpg" width="900"> </a></center>
+<br>
+<br>
+
 <h2>Video</h2>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<iframe src ="https://www.youtube.com/embed/AwBwFzOX63Q?si=W5qZCyYCdpO_kwU7" width="640" height="360" frameborder="0">
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<iframe src ="https://www.youtube.com/embed/AwBwFzOX63Q?si=W5qZCyYCdpO_kwU7" width="960" height="540" frameborder="0">
   <p>Your browser does not support iframes.</p>
 </iframe>
 
 	
 <h2>Abstract & Method</h2>
-<div style="font-size:16px"><p>Talking head synthesis has become a key research area in computer graphics and multimedia, yet most existing methods often struggle to balance generation quality with computational efficiency. In this paper, we present a novel approach that leverages an Audio Factorization Plane (Audio-Plane) based Gaussian Splatting for high-quality and real-time talking head generation. For modeling a dynamic talking head, 4D volume representation is needed. However, directly storing a dense 4D grid is impractical due to the high cost and lack of scalability for longer durations. We overcome this challenge with the proposed Audio-Plane, where the 4D volume representation is decomposed into audio-independent space planes and audio-dependent planes. This provides a compact and interpretable feature representation for talking head, facilitating more precise audio-aware spatial encoding and enhanced audio-driven lip dynamic modeling. To further improve speech dynamics, we develop a dynamic splatting method that helps the network more effectively focus on modeling the dynamics of the mouth region. Extensive experiments demonstrate that by integrating these innovations with the powerful Gaussian Splatting, our method is capable of synthesizing highly realistic talking videos in real time while ensuring precise audio-lip synchronization.</p></div>
+<div style="font-size:16px"><p>Talking head synthesis has emerged as a prominent research topic in computer graphics and multimedia, yet most existing methods often struggle to strike a balance between generation quality and computational efficiency, particularly under real-time constraints. In this paper, we propose a novel framework that integrates Gaussian Splatting with a structured Audio Factorization Plane (Audio-Plane) to enable high-quality, audio-synchronized, and real-time talking head generation. For modeling a dynamic talking head, a 4D volume representation, which consists of three axes in 3D space and one temporal axis aligned with audio progression, is typically required. However, directly storing and processing a dense 4D grid is impractical due to the high memory and computation cost, and lack of scalability for longer durations. We address this challenge by decomposing the 4D volume representation into a set of audio-independent spatial planes and audio-dependent planes, forming a compact and interpretable representation for talking head modeling that we refer to as the Audio-Plane. This factorized design allows for efficient and fine-grained audio-aware spatial encoding, and significantly enhances the model's ability to capture complex lip dynamics driven by speech signals. To further improve region-specific motion modeling, we introduce an audio-guided saliency splatting mechanism based on region-aware modulation, which adaptively emphasizes highly dynamic regions such as the mouth area. This allows the model to focus its learning capacity on where it matters most for accurate speech-driven animation. Extensive experiments on both the self-driven and the cross-driven settings demonstrate that our method achieves state-of-the-art visual quality, precise audio-lip synchronization, and real-time performance, outperforming prior approaches across both 2D- and 3D-based paradigms.</p></div>
 <br>
 <center><a href="images/pipeline-v2_00.png">
-<img style="PADDING-LEFT: 0px; PADDING-RIGHT: 200px;" src="images/pipeline-v2_00.png" width="800"> </a></center>
+<img style="PADDING-LEFT: 0px; PADDING-RIGHT: 200px;" src="images/pipeline-v2_00.jpg" width="900"> </a></center>
 <br>
 <br>
 <br>
